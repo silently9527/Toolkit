@@ -1,0 +1,32 @@
+<idea-plugin>
+    <id>cn.silently9527.toolset</id>
+    <name>Programmer Toolset</name>
+    <vendor email="380303318@qq.com" url="http://silently9527.cn">Silently9527</vendor>
+
+    <description><![CDATA[
+    微信公众号：贝塔学JAVA.<br>
+    <h3>程序员常用的工具集</h3>
+    <ul>
+        <li>SQL 转换成 ElasticSearch 查询语句</li>
+        <li>日期时间戳互转</li>
+        <li>JSON格式化</li>
+        <li>Base64编码/解码</li>
+        <li>URL编码/解码</li>
+    </ul>
+    ]]></description>
+
+    <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
+         on how to target different products -->
+    <!-- uncomment to enable plugin in all products
+    <depends>com.intellij.modules.lang</depends>
+    -->
+
+    <extensions defaultExtensionNs="com.intellij">
+        <!-- secondary:true表示设置在tool window bar最下方 -->
+        <toolWindow id="Programmer Toolset" anchor="right" factoryClass="cn.silently9527.ProgrammerToolsetWindowFactory" secondary="true"/>
+    </extensions>
+
+    <actions>
+        <!-- Add your actions here -->
+    </actions>
+</idea-plugin>
