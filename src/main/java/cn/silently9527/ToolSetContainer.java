@@ -1,13 +1,11 @@
 package cn.silently9527;
 
 import cn.silently9527.component.TextLineNumber;
+import cn.silently9527.toolset.Base64Panel;
 import cn.silently9527.toolset.Sql2DslPanel;
 import com.intellij.openapi.project.Project;
-import com.intellij.ui.components.JBScrollPane;
-import com.intellij.ui.components.JBTextArea;
 import com.intellij.ui.tabs.TabInfo;
 import com.intellij.ui.tabs.impl.JBTabsImpl;
-import com.intellij.util.ui.JBUI;
 
 import javax.swing.*;
 import java.awt.*;
@@ -28,6 +26,10 @@ public class ToolSetContainer {
         TabInfo Sql2DslTabInfo = new TabInfo(new Sql2DslPanel(project));
         Sql2DslTabInfo.setText("Sql2Dsl");
         tabs.addTab(Sql2DslTabInfo);
+
+        TabInfo base64TabInfo = new TabInfo(new Base64Panel(project));
+        base64TabInfo.setText("Base64");
+        tabs.addTab(base64TabInfo);
 
         content = new JPanel();
         content.setLayout(new BorderLayout());

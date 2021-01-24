@@ -3,9 +3,9 @@
 
 ## 研发计划
 - [x] SQL 转换成 ElasticSearch 查询语句
+- [x] Base64编码/解码
 - [ ] 日期时间戳互转
 - [ ] JSON格式化
-- [ ] Base64编码/解码
 - [ ] URL编码/解码
 
 
