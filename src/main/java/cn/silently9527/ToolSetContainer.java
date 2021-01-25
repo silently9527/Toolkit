@@ -42,6 +42,10 @@ public class ToolSetContainer {
         mobileTabInfo.setText("手机归属地");
         tabs.addTab(mobileTabInfo);
 
+        TabInfo urlTabInfo = new TabInfo(new URLPanel(project));
+        urlTabInfo.setText("URL编解码");
+        tabs.addTab(urlTabInfo);
+
         content = new JPanel();
         content.setLayout(new BorderLayout());
         content.add(tabs.getComponent(), BorderLayout.CENTER);

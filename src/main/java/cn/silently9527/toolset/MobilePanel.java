@@ -6,8 +6,10 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.text.StringUtil;
+import com.intellij.ui.JBColor;
 import com.intellij.ui.components.JBTextField;
 import com.intellij.ui.table.JBTable;
+import com.intellij.util.ui.JBUI;
 import org.jetbrains.annotations.NotNull;
 
 import javax.swing.*;
@@ -28,8 +30,14 @@ public class MobilePanel extends AbstractPanel {
     public MobilePanel(Project project) {
         super();
         this.add(createMobileTextEditor(), BorderLayout.NORTH);
-        this.add(jbTable, BorderLayout.CENTER);
+        this.add(createJBTable(), BorderLayout.CENTER);
         this.add(exceptionMessageLabel, BorderLayout.SOUTH);
+    }
+
+    private JComponent createJBTable() {
+        jbTable.setBorder(JBUI.Borders.customLine(JBColor.border(), 1));
+        jbTable.setGridColor(JBColor.border());
+        return jbTable;
     }
 
     private JComponent createMobileTextEditor() {
@@ -61,6 +69,7 @@ public class MobilePanel extends AbstractPanel {
                         new Object[][]{
                                 {"手机号码段", json.get("mts")},
                                 {"省份", json.get("province")},
+                                {"卡号归属地", json.get("carrier")},
                                 {"服务商", json.get("catName")}
                         }, new Object[]{"属性", "值"});
             } catch (Exception ex) {
