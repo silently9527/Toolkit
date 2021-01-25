@@ -5,24 +5,19 @@ import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.text.StringUtil;
 import com.intellij.ui.JBColor;
 import com.intellij.util.Base64;
-import com.intellij.util.ui.JBUI;
 import org.jetbrains.annotations.NotNull;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionListener;
 import java.nio.charset.StandardCharsets;
 
-public class Base64Panel extends JPanel {
-
+public class Base64Panel extends AbstractPanel {
     private TextEditor sourceTextEditor = new TextEditor(8, 20);
     private TextEditor targetTextEditor = new TextEditor(8, 20);
-    private JLabel exceptionMessageLabel = new JLabel();
-
 
     public Base64Panel(Project project) {
-        super(new BorderLayout(0, 10));
-        this.setBorder(JBUI.Borders.empty(10));
-
+        super();
         this.add(createSourceTextEditor(), BorderLayout.NORTH);
         this.add(createTargetTextEditor(), BorderLayout.CENTER);
         this.add(createConvertButton(), BorderLayout.SOUTH);
@@ -62,9 +57,7 @@ public class Base64Panel extends JPanel {
     @NotNull
     private ActionListener encodeButtonListener() {
         return e -> {
-            exceptionMessageLabel.setText("");
-            exceptionMessageLabel.setForeground(JBColor.RED);
-
+            setFailureStyle();
             String sourceText = this.sourceTextEditor.getTextValue();
             if (StringUtil.isEmpty(sourceText)) {
                 exceptionMessageLabel.setText("输入源必填");
@@ -73,18 +66,14 @@ public class Base64Panel extends JPanel {
 
             String result = Base64.encode(sourceText.getBytes(StandardCharsets.UTF_8));
             targetTextEditor.setTextValue(result);
-
-            exceptionMessageLabel.setForeground(JBColor.GREEN);
-            exceptionMessageLabel.setText("编码完成");
+            setSuccessStyle("编码完成");
         };
     }
 
     @NotNull
     private ActionListener decodeButtonListener() {
         return e -> {
-            exceptionMessageLabel.setText("");
-            exceptionMessageLabel.setForeground(JBColor.RED);
-
+            setFailureStyle();
             String sourceText = this.sourceTextEditor.getTextValue();
             if (StringUtil.isEmpty(sourceText)) {
                 exceptionMessageLabel.setText("输入源必填");
@@ -93,9 +82,7 @@ public class Base64Panel extends JPanel {
 
             String result = new String(Base64.decode(sourceText), StandardCharsets.UTF_8);
             this.targetTextEditor.setTextValue(result);
-
-            exceptionMessageLabel.setForeground(JBColor.GREEN);
-            exceptionMessageLabel.setText("解码完成");
+            setSuccessStyle("解码完成");
         };
     }
 

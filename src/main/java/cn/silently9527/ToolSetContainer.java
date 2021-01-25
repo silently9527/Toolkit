@@ -1,8 +1,7 @@
 package cn.silently9527;
 
 import cn.silently9527.component.TextLineNumber;
-import cn.silently9527.toolset.Base64Panel;
-import cn.silently9527.toolset.Sql2DslPanel;
+import cn.silently9527.toolset.*;
 import com.intellij.openapi.project.Project;
 import com.intellij.ui.tabs.TabInfo;
 import com.intellij.ui.tabs.impl.JBTabsImpl;
@@ -30,6 +29,18 @@ public class ToolSetContainer {
         TabInfo base64TabInfo = new TabInfo(new Base64Panel(project));
         base64TabInfo.setText("Base64");
         tabs.addTab(base64TabInfo);
+
+        TabInfo jsonTabInfo = new TabInfo(new JSONPanel(project));
+        jsonTabInfo.setText("JSON Format");
+        tabs.addTab(jsonTabInfo);
+
+        TabInfo ipAddressTabInfo = new TabInfo(new IpAddressPanel(project));
+        ipAddressTabInfo.setText("Ip查询");
+        tabs.addTab(ipAddressTabInfo);
+
+        TabInfo mobileTabInfo = new TabInfo(new MobilePanel(project));
+        mobileTabInfo.setText("手机归属地");
+        tabs.addTab(mobileTabInfo);
 
         content = new JPanel();
         content.setLayout(new BorderLayout());

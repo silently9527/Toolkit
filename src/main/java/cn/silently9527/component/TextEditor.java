@@ -23,7 +23,7 @@ public class TextEditor extends JPanel {
         textArea = new JBTextArea(rows, columns);
         textArea.setAutoscrolls(true);
         textArea.setTabSize(4);
-        textArea.setFont(JBFont.getFont(JBFont.DIALOG_INPUT));
+        textArea.setFont(JBFont.getFont(JBFont.DIALOG));
 
         JBScrollPane scrollPane = new JBScrollPane(textArea);
         TextLineNumber tln = new TextLineNumber(textArea);

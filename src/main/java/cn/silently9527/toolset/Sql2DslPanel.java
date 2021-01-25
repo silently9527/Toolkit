@@ -1,32 +1,29 @@
 package cn.silently9527.toolset;
 
+import cn.hutool.http.HttpUtil;
 import cn.silently9527.component.TextEditor;
+import cn.silently9527.utils.JsonFormatter;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.text.StringUtil;
-import com.intellij.ui.JBColor;
 import com.intellij.ui.components.JBCheckBox;
-import com.intellij.util.ui.JBUI;
-import com.wantest.es.sql2dsl.es4sql.SqlToDsl;
+import org.apache.commons.lang3.StringEscapeUtils;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.HashMap;
+import java.util.Map;
 
-public class Sql2DslPanel extends JPanel implements ActionListener {
-
+public class Sql2DslPanel extends AbstractPanel implements ActionListener {
+    private static final String URL = "http://www.ischoolbar.com/EsParser/convert.php";
     private TextEditor sqlTextEditor = new TextEditor(8, 20);
     private TextEditor dslTextEditor = new TextEditor(8, 20);
-    private JLabel exceptionMessageLabel = new JLabel();
     private JBCheckBox format = new JBCheckBox("格式化DSL");
 
-
     public Sql2DslPanel(Project project) {
-        super(new BorderLayout(0, 10));
-        this.setBorder(JBUI.Borders.empty(10));
-
         this.add(createSqlArea(), BorderLayout.NORTH);
         this.add(createDslArea(), BorderLayout.CENTER);
         this.add(createConvertButton(), BorderLayout.SOUTH);
@@ -59,11 +56,9 @@ public class Sql2DslPanel extends JPanel implements ActionListener {
         return panel;
     }
 
-
     @Override
     public void actionPerformed(ActionEvent e) {
-        exceptionMessageLabel.setText("");
-        exceptionMessageLabel.setForeground(JBColor.RED);
+        setFailureStyle();
 
         String sqlText = this.sqlTextEditor.getTextValue();
         if (StringUtil.isEmpty(sqlText)) {
@@ -72,7 +67,10 @@ public class Sql2DslPanel extends JPanel implements ActionListener {
         }
         String dslText;
         try {
-            dslText = SqlToDsl.toExactDsl(sqlText);
+            Map<String, Object> paramMap = new HashMap<>();
+            paramMap.put("mysqlStr", sqlText);
+            dslText = HttpUtil.post(URL, paramMap);
+            dslText = StringEscapeUtils.unescapeJava(dslText.substring(1, dslText.length() - 1));
         } catch (Exception ex) {
             exceptionMessageLabel.setText("转换失败，请检查SQL，异常信息：" + ex.getMessage());
             return;
@@ -80,19 +78,18 @@ public class Sql2DslPanel extends JPanel implements ActionListener {
 
         if (format.isSelected()) {
             try {
-                ObjectMapper mapper = new ObjectMapper();
-                JsonNode jsonNode = mapper.readTree(dslText);
-                dslText = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(jsonNode);
+//                ObjectMapper mapper = new ObjectMapper();
+//                JsonNode jsonNode = mapper.readTree(dslText);
+//                dslText = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(jsonNode);
+                dslText = JsonFormatter.format(dslText);
             } catch (Exception ex) {
                 exceptionMessageLabel.setText("格式化失败，去掉勾选格式化再试");
                 return;
             }
         }
-
         this.dslTextEditor.setTextValue(dslText);
 
-        exceptionMessageLabel.setForeground(JBColor.GREEN);
-        exceptionMessageLabel.setText("转换完成");
+        setSuccessStyle("转换完成");
     }
 
 
