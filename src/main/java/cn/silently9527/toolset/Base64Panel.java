@@ -3,7 +3,6 @@ package cn.silently9527.toolset;
 import cn.silently9527.component.TextEditor;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.text.StringUtil;
-import com.intellij.ui.JBColor;
 import com.intellij.util.Base64;
 import org.jetbrains.annotations.NotNull;
 

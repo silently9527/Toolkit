@@ -4,18 +4,11 @@ import cn.hutool.core.util.URLUtil;
 import cn.silently9527.component.TextEditor;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.text.StringUtil;
-import com.intellij.ui.JBColor;
-import com.intellij.util.Base64;
-import com.intellij.util.ui.JBUI;
 import org.jetbrains.annotations.NotNull;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionListener;
-import java.io.UnsupportedEncodingException;
-import java.net.URLDecoder;
-import java.net.URLEncoder;
-import java.nio.charset.StandardCharsets;
 
 public class URLPanel extends AbstractPanel {
     private TextEditor sourceTextEditor = new TextEditor(8, 20);

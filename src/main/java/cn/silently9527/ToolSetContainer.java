@@ -1,7 +1,11 @@
 package cn.silently9527;
 
-import cn.silently9527.component.TextLineNumber;
-import cn.silently9527.toolset.*;
+import cn.silently9527.toolset.Base64Panel;
+import cn.silently9527.toolset.IpAddressPanel;
+import cn.silently9527.toolset.JSONPanel;
+import cn.silently9527.toolset.MobilePanel;
+import cn.silently9527.toolset.Sql2DslPanel;
+import cn.silently9527.toolset.URLPanel;
 import com.intellij.openapi.project.Project;
 import com.intellij.ui.tabs.TabInfo;
 import com.intellij.ui.tabs.impl.JBTabsImpl;
@@ -31,7 +35,7 @@ public class ToolSetContainer {
         tabs.addTab(base64TabInfo);
 
         TabInfo jsonTabInfo = new TabInfo(new JSONPanel(project));
-        jsonTabInfo.setText("JSON Format");
+        jsonTabInfo.setText("JSON格式化");
         tabs.addTab(jsonTabInfo);
 
         TabInfo ipAddressTabInfo = new TabInfo(new IpAddressPanel(project));

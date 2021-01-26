@@ -2,8 +2,6 @@ package cn.silently9527.toolset;
 
 import cn.hutool.http.HttpUtil;
 import cn.silently9527.utils.ParseJsonStrUtils;
-import com.fasterxml.jackson.databind.JsonNode;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.text.StringUtil;
 import com.intellij.ui.JBColor;
@@ -14,12 +12,9 @@ import org.jetbrains.annotations.NotNull;
 
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
-import javax.swing.table.TableModel;
 import java.awt.*;
 import java.awt.event.ActionListener;
-import java.io.IOException;
 import java.util.Map;
-import java.util.Vector;
 
 public class MobilePanel extends AbstractPanel {
     private static final String URL = "https://tcc.taobao.com/cc/json/mobile_tel_segment.htm?tel=";
