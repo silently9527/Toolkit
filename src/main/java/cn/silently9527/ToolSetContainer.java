@@ -4,6 +4,7 @@ import cn.silently9527.toolset.Base64Panel;
 import cn.silently9527.toolset.IpAddressPanel;
 import cn.silently9527.toolset.JSONPanel;
 import cn.silently9527.toolset.MobilePanel;
+import cn.silently9527.toolset.RegularExpressionPanel;
 import cn.silently9527.toolset.Sql2DslPanel;
 import cn.silently9527.toolset.URLPanel;
 import com.intellij.openapi.project.Project;
@@ -49,6 +50,10 @@ public class ToolSetContainer {
         TabInfo urlTabInfo = new TabInfo(new URLPanel(project));
         urlTabInfo.setText("URL编解码");
         tabs.addTab(urlTabInfo);
+
+        TabInfo regularTabInfo = new TabInfo(new RegularExpressionPanel(project));
+        regularTabInfo.setText("正则表达式");
+        tabs.addTab(regularTabInfo);
 
         content = new JPanel();
         content.setLayout(new BorderLayout());

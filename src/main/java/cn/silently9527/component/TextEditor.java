@@ -13,16 +13,26 @@ public class TextEditor extends JPanel {
     private JBTextArea textArea;
 
     public TextEditor() {
-        this(0, 0);
+        this(0, 0, true);
+    }
+
+    public TextEditor(boolean editable) {
+        this(0, 0, editable);
     }
 
     public TextEditor(int rows, int columns) {
+        this(rows, columns, true);
+    }
+
+    public TextEditor(int rows, int columns, boolean editable) {
         super(new BorderLayout());
         this.setBorder(JBUI.Borders.customLine(JBColor.border()));
 
         textArea = new JBTextArea(rows, columns);
         textArea.setAutoscrolls(true);
         textArea.setTabSize(4);
+        textArea.setEditable(editable);
+
         textArea.setFont(JBFont.getFont(JBFont.DIALOG));
 
         JBScrollPane scrollPane = new JBScrollPane(textArea);
@@ -30,6 +40,10 @@ public class TextEditor extends JPanel {
         scrollPane.setRowHeaderView(tln);
 
         this.add(scrollPane, BorderLayout.CENTER);
+    }
+
+    public void setEditable(boolean editable) {
+        textArea.setEditable(editable);
     }
 
     public JBTextArea getTextArea() {

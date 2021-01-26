@@ -10,8 +10,16 @@ public class AbstractPanel extends JPanel {
     protected JLabel exceptionMessageLabel = new JLabel();
 
     public AbstractPanel() {
-        super(new BorderLayout(0, 10));
-        this.setBorder(JBUI.Borders.empty(10));
+        this(0, 10, 10);
+    }
+
+    public AbstractPanel(int hgap, int vgap) {
+        this(hgap, vgap, 10);
+    }
+
+    public AbstractPanel(int hgap, int vgap, int borderGrap) {
+        super(new BorderLayout(hgap, vgap));
+        this.setBorder(JBUI.Borders.empty(borderGrap));
     }
 
     protected void setFailureStyle() {
