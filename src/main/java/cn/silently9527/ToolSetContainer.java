@@ -6,6 +6,7 @@ import cn.silently9527.toolset.JSONPanel;
 import cn.silently9527.toolset.MobilePanel;
 import cn.silently9527.toolset.RegularExpressionPanel;
 import cn.silently9527.toolset.Sql2DslPanel;
+import cn.silently9527.toolset.TimestampPanel;
 import cn.silently9527.toolset.URLPanel;
 import com.intellij.openapi.project.Project;
 import com.intellij.ui.tabs.TabInfo;
@@ -54,6 +55,10 @@ public class ToolSetContainer {
         TabInfo urlTabInfo = new TabInfo(new URLPanel(project));
         urlTabInfo.setText("URL编解码");
         tabs.addTab(urlTabInfo);
+
+        TabInfo timeTabInfo = new TabInfo(new TimestampPanel(project));
+        timeTabInfo.setText("时间戳");
+        tabs.addTab(timeTabInfo);
 
         content = new JPanel();
         content.setLayout(new BorderLayout());
