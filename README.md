@@ -15,7 +15,13 @@
 - [ ] 文件下载
 - [ ] js/css混淆压缩
 
-## 按照步骤
+## 插件安装步骤
+1. 从release中下载最新版本的代码
+2. 在IDEA中通过本地安装插件
+
+![](https://tva1.sinaimg.cn/large/008eGmZEgy1gn2k1z0wcsj31dm0u00vo.jpg)
+
+
 
 ## 功能介绍：
 
