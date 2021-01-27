@@ -2,6 +2,8 @@ package cn.silently9527.toolset;
 
 import cn.silently9527.component.TextEditor;
 import cn.silently9527.utils.JsonFormatter;
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.text.StringUtil;
 import org.jetbrains.annotations.NotNull;
@@ -47,7 +49,9 @@ public class JSONPanel extends AbstractPanel {
                 return;
             }
             try {
-                this.textEditor.setTextValue(JsonFormatter.format(text));
+                ObjectMapper mapper = new ObjectMapper();
+                JsonNode jsonNode = mapper.readTree(text);
+                this.textEditor.setTextValue(mapper.writerWithDefaultPrettyPrinter().writeValueAsString(jsonNode));
             } catch (Exception ex) {
                 exceptionMessageLabel.setText("格式化失败，请检查JSON字符串");
                 return;

@@ -76,9 +76,6 @@ public class Sql2DslPanel extends AbstractPanel implements ActionListener {
 
         if (format.isSelected()) {
             try {
-//                ObjectMapper mapper = new ObjectMapper();
-//                JsonNode jsonNode = mapper.readTree(dslText);
-//                dslText = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(jsonNode);
                 dslText = JsonFormatter.format(dslText);
             } catch (Exception ex) {
                 exceptionMessageLabel.setText("格式化失败，去掉勾选格式化再试");
