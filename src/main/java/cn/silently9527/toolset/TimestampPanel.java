@@ -47,7 +47,7 @@ public class TimestampPanel extends AbstractPanel {
         dateTextField2.addFocusListener(new JBTextFieldHintListener(dateTextField2, FORMAT));
 
         timeStampTextField1.setText(String.valueOf(new Date().getTime()));
-        dateTextField1.setText(DateUtil.format(new Date(), FORMAT));
+        dateTextField2.setText(DateUtil.format(new Date(), FORMAT));
     }
 
     private JComponent addDateToTimestamp() {
