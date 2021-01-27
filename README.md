@@ -1,5 +1,5 @@
 # Toolset Idea Plugin
-本项目主要开发程序员常用的工具集Idea插件，帮助开发人员提升效率
+本项目主要研发常用的Idea插件工具集，帮助开发人员提升效率
 
 ## 功能计划
 - [x] SQL 转换成 ElasticSearch 查询语句
