@@ -28,10 +28,6 @@ public class ToolSetContainer {
     private void init() {
         JBTabsImpl tabs = new JBTabsImpl(project);
 
-        TabInfo regularTabInfo = new TabInfo(new RegularExpressionPanel(project));
-        regularTabInfo.setText("正则表达式");
-        tabs.addTab(regularTabInfo);
-
         TabInfo Sql2DslTabInfo = new TabInfo(new Sql2DslPanel(project));
         Sql2DslTabInfo.setText("Sql2Dsl");
         tabs.addTab(Sql2DslTabInfo);
@@ -59,6 +55,10 @@ public class ToolSetContainer {
         TabInfo timeTabInfo = new TabInfo(new TimestampPanel(project));
         timeTabInfo.setText("时间戳");
         tabs.addTab(timeTabInfo);
+
+        TabInfo regularTabInfo = new TabInfo(new RegularExpressionPanel(project));
+        regularTabInfo.setText("正则表达式");
+        tabs.addTab(regularTabInfo);
 
         content = new JPanel();
         content.setLayout(new BorderLayout());
