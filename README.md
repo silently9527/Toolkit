@@ -1,6 +1,9 @@
 # Toolset Idea Plugin
 本项目主要研发常用的Idea插件工具集，帮助开发人员提升效率
 
+> Github地址: https://github.com/silently9527/ToolsetIdeaPlugin
+> Gitee地址: https://gitee.com/silently9527/ToolsetIdeaPlugin
+>
 > 觉得好用的小伙伴记得小手一抖 star 哟
 
 ## 功能计划
