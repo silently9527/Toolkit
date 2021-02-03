@@ -26,8 +26,8 @@ intellij {
 }
 patchPluginXml {
     changeNotes """
-      Add change notes here.<br>
-      <em>most HTML tags may be used</em>"""
+      Toolset-1.0.0"""
+    sinceBuild "162"
 }
 
 tasks.withType(JavaCompile) {
