@@ -20,7 +20,6 @@
     <!-- uncomment to enable plugin in all products
     <depends>com.intellij.modules.lang</depends>
     -->
-    <idea-version since-build="162"/>
 
     <extensions defaultExtensionNs="com.intellij">
         <!-- secondary:true表示设置在tool window bar最下方 -->

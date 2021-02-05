@@ -23,11 +23,11 @@ dependencies {
 // See https://github.com/JetBrains/gradle-intellij-plugin/
 intellij {
     version '2019.1'
+    intellij.updateSinceUntilBuild false
 }
 patchPluginXml {
     changeNotes """
       Toolset-1.0.0"""
-    sinceBuild "162"
 }
 
 tasks.withType(JavaCompile) {
