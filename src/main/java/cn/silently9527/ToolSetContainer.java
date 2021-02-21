@@ -1,11 +1,11 @@
 package cn.silently9527;
 
 import cn.silently9527.toolset.Base64Panel;
-import cn.silently9527.toolset.CronPanel;
 import cn.silently9527.toolset.IpAddressPanel;
 import cn.silently9527.toolset.JSONPanel;
 import cn.silently9527.toolset.Md5Panel;
 import cn.silently9527.toolset.MobilePanel;
+import cn.silently9527.toolset.QRCodePanel;
 import cn.silently9527.toolset.RegularExpressionPanel;
 import cn.silently9527.toolset.Sql2DslPanel;
 import cn.silently9527.toolset.TimestampPanel;
@@ -65,6 +65,10 @@ public class ToolSetContainer {
         TabInfo regularTabInfo = new TabInfo(new RegularExpressionPanel(project));
         regularTabInfo.setText("正则表达式");
         tabs.addTab(regularTabInfo);
+
+        TabInfo QRCodeTabInfo = new TabInfo(new QRCodePanel(project));
+        QRCodeTabInfo.setText("二维码");
+        tabs.addTab(QRCodeTabInfo);
 
         content = new JPanel();
         content.setLayout(new BorderLayout());
