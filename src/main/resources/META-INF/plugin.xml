@@ -23,7 +23,7 @@
 
     <extensions defaultExtensionNs="com.intellij">
         <!-- secondary:true表示设置在tool window bar最下方 -->
-        <toolWindow id="Programmer Toolset" anchor="right" factoryClass="cn.silently9527.ProgrammerToolsetWindowFactory" secondary="true"/>
+        <toolWindow id="Programmer Toolset" anchor="bottom" factoryClass="cn.silently9527.ProgrammerToolsetWindowFactory" secondary="true"/>
     </extensions>
 
     <actions>

@@ -1,8 +1,10 @@
 package cn.silently9527;
 
 import cn.silently9527.toolset.Base64Panel;
+import cn.silently9527.toolset.CronPanel;
 import cn.silently9527.toolset.IpAddressPanel;
 import cn.silently9527.toolset.JSONPanel;
+import cn.silently9527.toolset.Md5Panel;
 import cn.silently9527.toolset.MobilePanel;
 import cn.silently9527.toolset.RegularExpressionPanel;
 import cn.silently9527.toolset.Sql2DslPanel;
@@ -35,6 +37,10 @@ public class ToolSetContainer {
         TabInfo base64TabInfo = new TabInfo(new Base64Panel(project));
         base64TabInfo.setText("Base64");
         tabs.addTab(base64TabInfo);
+
+        TabInfo md5TabInfo = new TabInfo(new Md5Panel(project));
+        md5TabInfo.setText("Md5");
+        tabs.addTab(md5TabInfo);
 
         TabInfo jsonTabInfo = new TabInfo(new JSONPanel(project));
         jsonTabInfo.setText("JSON格式化");
