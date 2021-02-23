@@ -59,7 +59,11 @@
 ### 正则表达式
 ![](https://tva1.sinaimg.cn/large/008eGmZEgy1gn2jcjxnofj31c00u0tf9.jpg)
 
+### 二维码
+![](https://tva1.sinaimg.cn/large/008eGmZEgy1gnxbmtzi3kj31hc0u0dhh.jpg)
 
+### Md5
+![](https://tva1.sinaimg.cn/large/008eGmZEgy1gnxbnkbcqaj31hc0u0gn5.jpg)
 
 ## 微信公众号
 <img width="200" src="https://raw.githubusercontent.com/silently9527/JavaCore/master/imgs/gonzhonghao.png" alt="公众号">
