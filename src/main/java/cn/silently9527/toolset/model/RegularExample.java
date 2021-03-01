@@ -7,7 +7,6 @@ public class RegularExample {
     public RegularExample(String name, String regular) {
         this.name = name;
         this.regular = regular;
-
     }
 
     public String getName() {
