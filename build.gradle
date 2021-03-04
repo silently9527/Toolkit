@@ -24,8 +24,18 @@ dependencies {
 
 // See https://github.com/JetBrains/gradle-intellij-plugin/
 intellij {
-    version '2019.1'
-    intellij.updateSinceUntilBuild false
+    // 插件名称
+    pluginName 'Programmer Toolset'
+    // 沙箱目录位置，用于保存IDEA的设置，默认在build文件下面，防止clean，放在根目录下。
+    sandboxDirectory = "${rootProject.rootDir}/idea-sandbox"
+    // 开发环境运行时使用的版本
+    version '2020.1.2'
+    type 'IU'
+    // 各种版本去这里找
+    // https://www.jetbrains.com/intellij-repository/releases
+    //Disables updating since-build attribute in plugin.xml
+    updateSinceUntilBuild false
+    downloadSources = true
 }
 patchPluginXml {
     changeNotes """

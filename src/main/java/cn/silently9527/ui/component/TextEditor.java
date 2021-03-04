@@ -1,4 +1,4 @@
-package cn.silently9527.component;
+package cn.silently9527.ui.component;
 
 import com.intellij.ui.JBColor;
 import com.intellij.ui.components.JBScrollPane;

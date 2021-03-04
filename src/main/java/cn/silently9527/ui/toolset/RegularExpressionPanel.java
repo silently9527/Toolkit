@@ -1,7 +1,7 @@
-package cn.silently9527.toolset;
+package cn.silently9527.ui.toolset;
 
-import cn.silently9527.component.TextEditor;
-import cn.silently9527.toolset.model.RegularExample;
+import cn.silently9527.ui.component.TextEditor;
+import cn.silently9527.ui.toolset.model.RegularExample;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.text.StringUtil;
 import com.intellij.ui.ColoredListCellRenderer;

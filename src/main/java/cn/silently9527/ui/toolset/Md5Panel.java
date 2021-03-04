@@ -1,21 +1,20 @@
-package cn.silently9527.toolset;
+package cn.silently9527.ui.toolset;
 
-import cn.silently9527.component.TextEditor;
+import cn.silently9527.ui.component.TextEditor;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.text.StringUtil;
-import com.intellij.util.Base64;
+import org.apache.commons.codec.digest.DigestUtils;
 import org.jetbrains.annotations.NotNull;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionListener;
-import java.nio.charset.StandardCharsets;
 
-public class Base64Panel extends AbstractPanel {
+public class Md5Panel extends AbstractPanel {
     private TextEditor sourceTextEditor = new TextEditor(8, 20);
     private TextEditor targetTextEditor = new TextEditor(8, 20);
 
-    public Base64Panel(Project project) {
+    public Md5Panel(Project project) {
         super();
         this.add(createSourceTextEditor(), BorderLayout.NORTH);
         this.add(createTargetTextEditor(), BorderLayout.CENTER);
@@ -26,13 +25,8 @@ public class Base64Panel extends AbstractPanel {
         JButton encodeButton = new JButton("编码");
         encodeButton.addActionListener(encodeButtonListener());
 
-        JButton decodeButton = new JButton("解码");
-        decodeButton.addActionListener(decodeButtonListener());
-
         Box horizontalBox = Box.createHorizontalBox();
         horizontalBox.add(encodeButton);
-        horizontalBox.add(Box.createHorizontalStrut(10));
-        horizontalBox.add(decodeButton);
         horizontalBox.add(Box.createHorizontalStrut(10));
         horizontalBox.add(exceptionMessageLabel);
         return horizontalBox;
@@ -63,26 +57,11 @@ public class Base64Panel extends AbstractPanel {
                 return;
             }
 
-            String result = Base64.encode(sourceText.getBytes(StandardCharsets.UTF_8));
+            String result = DigestUtils.md5Hex(sourceText);
             targetTextEditor.setTextValue(result);
             setSuccessStyle("编码完成");
         };
     }
 
-    @NotNull
-    private ActionListener decodeButtonListener() {
-        return e -> {
-            setFailureStyle();
-            String sourceText = this.sourceTextEditor.getTextValue();
-            if (StringUtil.isEmpty(sourceText)) {
-                exceptionMessageLabel.setText("输入源必填");
-                return;
-            }
-
-            String result = new String(Base64.decode(sourceText), StandardCharsets.UTF_8);
-            this.targetTextEditor.setTextValue(result);
-            setSuccessStyle("解码完成");
-        };
-    }
 
 }

@@ -1,15 +1,15 @@
-package cn.silently9527;
+package cn.silently9527.ui;
 
-import cn.silently9527.toolset.Base64Panel;
-import cn.silently9527.toolset.IpAddressPanel;
-import cn.silently9527.toolset.JSONPanel;
-import cn.silently9527.toolset.Md5Panel;
-import cn.silently9527.toolset.MobilePanel;
-import cn.silently9527.toolset.QRCodePanel;
-import cn.silently9527.toolset.RegularExpressionPanel;
-import cn.silently9527.toolset.Sql2DslPanel;
-import cn.silently9527.toolset.TimestampPanel;
-import cn.silently9527.toolset.URLPanel;
+import cn.silently9527.ui.toolset.Base64Panel;
+import cn.silently9527.ui.toolset.IpAddressPanel;
+import cn.silently9527.ui.toolset.JSONPanel;
+import cn.silently9527.ui.toolset.Md5Panel;
+import cn.silently9527.ui.toolset.MobilePanel;
+import cn.silently9527.ui.toolset.QRCodePanel;
+import cn.silently9527.ui.toolset.RegularExpressionPanel;
+import cn.silently9527.ui.toolset.Sql2DslPanel;
+import cn.silently9527.ui.toolset.TimestampPanel;
+import cn.silently9527.ui.toolset.URLPanel;
 import com.intellij.openapi.project.Project;
 import com.intellij.ui.tabs.TabInfo;
 import com.intellij.ui.tabs.impl.JBTabsImpl;

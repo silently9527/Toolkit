@@ -1,20 +1,21 @@
-package cn.silently9527.toolset;
+package cn.silently9527.ui.toolset;
 
-import cn.hutool.core.util.URLUtil;
-import cn.silently9527.component.TextEditor;
+import cn.silently9527.ui.component.TextEditor;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.text.StringUtil;
+import com.intellij.util.Base64;
 import org.jetbrains.annotations.NotNull;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionListener;
+import java.nio.charset.StandardCharsets;
 
-public class URLPanel extends AbstractPanel {
+public class Base64Panel extends AbstractPanel {
     private TextEditor sourceTextEditor = new TextEditor(8, 20);
     private TextEditor targetTextEditor = new TextEditor(8, 20);
 
-    public URLPanel(Project project) {
+    public Base64Panel(Project project) {
         super();
         this.add(createSourceTextEditor(), BorderLayout.NORTH);
         this.add(createTargetTextEditor(), BorderLayout.CENTER);
@@ -24,6 +25,7 @@ public class URLPanel extends AbstractPanel {
     private Component createConvertButton() {
         JButton encodeButton = new JButton("编码");
         encodeButton.addActionListener(encodeButtonListener());
+
         JButton decodeButton = new JButton("解码");
         decodeButton.addActionListener(decodeButtonListener());
 
@@ -60,8 +62,9 @@ public class URLPanel extends AbstractPanel {
                 exceptionMessageLabel.setText("输入源必填");
                 return;
             }
-            String encode = URLUtil.encode(sourceText);
-            targetTextEditor.setTextValue(encode);
+
+            String result = Base64.encode(sourceText.getBytes(StandardCharsets.UTF_8));
+            targetTextEditor.setTextValue(result);
             setSuccessStyle("编码完成");
         };
     }
@@ -75,11 +78,11 @@ public class URLPanel extends AbstractPanel {
                 exceptionMessageLabel.setText("输入源必填");
                 return;
             }
-            String decode = URLUtil.decode(sourceText);
-            targetTextEditor.setTextValue(decode);
+
+            String result = new String(Base64.decode(sourceText), StandardCharsets.UTF_8);
+            this.targetTextEditor.setTextValue(result);
             setSuccessStyle("解码完成");
         };
     }
-
 
 }

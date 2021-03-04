@@ -1,7 +1,7 @@
-package cn.silently9527.toolset;
+package cn.silently9527.ui.toolset;
 
 import cn.hutool.http.HttpUtil;
-import cn.silently9527.component.TextEditor;
+import cn.silently9527.ui.component.TextEditor;
 import cn.silently9527.utils.JsonFormatter;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.text.StringUtil;

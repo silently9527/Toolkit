@@ -1,4 +1,4 @@
-package cn.silently9527.toolset.listener;
+package cn.silently9527.ui.toolset.listener;
 
 import com.intellij.ui.JBColor;
 import com.intellij.ui.components.JBTextField;

@@ -1,4 +1,4 @@
-package cn.silently9527.toolset;
+package cn.silently9527.ui.toolset;
 
 import cn.silently9527.utils.QRCodeUtils;
 import com.intellij.openapi.fileChooser.FileChooser;
@@ -7,19 +7,14 @@ import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.text.StringUtil;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.ui.components.JBLabel;
-import com.intellij.util.ui.UI;
-import org.apache.commons.codec.digest.DigestUtils;
 import org.jetbrains.annotations.NotNull;
 
 import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.image.BufferedImage;
 import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.Random;
 

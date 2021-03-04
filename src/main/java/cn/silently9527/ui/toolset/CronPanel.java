@@ -1,4 +1,4 @@
-package cn.silently9527.toolset;
+package cn.silently9527.ui.toolset;
 
 import com.intellij.openapi.project.Project;
 

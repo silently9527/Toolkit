@@ -1,7 +1,6 @@
-package cn.silently9527.toolset;
+package cn.silently9527.ui.toolset;
 
-import cn.silently9527.component.TextEditor;
-import cn.silently9527.utils.JsonFormatter;
+import cn.silently9527.ui.component.TextEditor;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.intellij.openapi.project.Project;

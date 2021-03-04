@@ -1,5 +1,5 @@
 <idea-plugin>
-    <id>cn.silently9527.toolset</id>
+    <id>cn.silently9527.ui.toolset</id>
     <name>Programmer Toolset</name>
     <vendor email="380303318@qq.com" url="http://silently9527.cn">Silently9527</vendor>
 
@@ -22,8 +22,9 @@
     -->
 
     <extensions defaultExtensionNs="com.intellij">
-        <!-- secondary:true表示设置在tool window bar最下方 -->
-        <toolWindow id="Programmer Toolset" anchor="bottom" factoryClass="cn.silently9527.ProgrammerToolsetWindowFactory" secondary="true"/>
+
+        <runAnything.executionProvider id="runAnythingExecutionProvider"
+                                       implementation="cn.silently9527.extensions.runanything.RunAnythingToolsetProvider"/>
     </extensions>
 
     <actions>
