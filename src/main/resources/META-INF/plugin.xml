@@ -22,9 +22,13 @@
     -->
 
     <extensions defaultExtensionNs="com.intellij">
+        <applicationService serviceInterface="cn.silently9527.service.CacheService"
+                            serviceImplementation="cn.silently9527.service.impl.CacheServiceImpl"/>'
+        <applicationService serviceInterface="cn.silently9527.service.ToolkitCommandService"
+                            serviceImplementation="cn.silently9527.service.impl.ToolkitCommandServiceImpl"/>'
 
         <runAnything.executionProvider id="runAnythingExecutionProvider"
-                                       implementation="cn.silently9527.extensions.runanything.RunAnythingToolsetProvider"/>
+                                       implementation="cn.silently9527.extensions.runanything.RunAnythingToolkitProvider"/>
     </extensions>
 
     <actions>

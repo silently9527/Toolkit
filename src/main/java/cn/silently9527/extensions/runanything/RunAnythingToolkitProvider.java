@@ -1,12 +1,14 @@
 package cn.silently9527.extensions.runanything;
 
-import cn.silently9527.domain.actions.ToolsetCommandAction;
-import com.google.common.cache.Cache;
+import cn.silently9527.actions.ToolkitCommandAction;
+import cn.silently9527.domain.ToolkitCommand;
+import cn.silently9527.service.CacheService;
 import com.intellij.icons.AllIcons;
 import com.intellij.ide.IdeBundle;
 import com.intellij.ide.actions.runAnything.activity.RunAnythingAnActionProvider;
 import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.actionSystem.DataContext;
+import com.intellij.openapi.components.ServiceManager;
 import com.intellij.util.ObjectUtils;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -14,14 +16,34 @@ import org.jetbrains.annotations.Nullable;
 import javax.swing.*;
 import java.util.Arrays;
 import java.util.Collection;
+import java.util.Objects;
+import java.util.stream.Collectors;
 
-public class RunAnythingToolsetProvider extends RunAnythingAnActionProvider<AnAction> {
+public class RunAnythingToolkitProvider extends RunAnythingAnActionProvider<AnAction> {
+    private static final String CACHE_KEY = "ToolkitCommandActionInstances";
 
+    private CacheService cacheService;
 
+    public RunAnythingToolkitProvider() {
+        cacheService = ServiceManager.getService(CacheService.class);
+    }
 
     @Override
+    @SuppressWarnings("unchecked")
     public @NotNull Collection<AnAction> getValues(@NotNull DataContext dataContext, @NotNull String pattern) {
-        return Arrays.asList(new ToolsetCommandAction("nat", "nat"), new ToolsetCommandAction("date", "date"));
+        Object value = cacheService.get(CACHE_KEY);
+        if (Objects.nonNull(value)) {
+            return (Collection<AnAction>) value;
+        }
+        Collection<AnAction> actions = createActions();
+        cacheService.put(CACHE_KEY, actions);
+        return actions;
+    }
+
+    private Collection<AnAction> createActions() {
+        return Arrays.stream(ToolkitCommand.values())
+                .map(ToolkitCommandAction::new)
+                .collect(Collectors.toList());
     }
 
     @Override
@@ -32,19 +54,19 @@ public class RunAnythingToolsetProvider extends RunAnythingAnActionProvider<AnAc
 
     @Override
     public @Nullable String getHelpGroupTitle() {
-        return "Toolset";
+        return "Toolkit";
     }
 
     @NotNull
     @Override
     public String getHelpCommand() {
-        return "toolset";
+        return "toolkit";
     }
 
     @NotNull
     @Override
     public String getHelpCommandPlaceholder() {
-        return "toolset <command name>";
+        return "toolkit <command name>";
     }
 
     @Override
@@ -56,7 +78,7 @@ public class RunAnythingToolsetProvider extends RunAnythingAnActionProvider<AnAc
     @NotNull
     @Override
     public String getCompletionGroupTitle() {
-        return "Toolset"; //过滤界面中的名称
+        return "toolkit"; //过滤界面中的名称
     }
 
 //    @Override
