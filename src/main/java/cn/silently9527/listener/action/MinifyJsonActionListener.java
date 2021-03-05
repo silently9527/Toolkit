@@ -1,4 +1,4 @@
-package cn.silently9527.actions;
+package cn.silently9527.listener.action;
 
 import cn.silently9527.notification.ToolkitNotifier;
 import cn.silently9527.utils.JsonUtils;
@@ -9,12 +9,16 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 /**
- * FormatJsonAction
+ * MinifyJsonAction
  */
-public class FormatJsonAction implements ActionListener {
+public class MinifyJsonActionListener implements ActionListener {
+
     private EditorTextField editorTextField;
 
-    public FormatJsonAction(EditorTextField editorTextField) {
+    public MinifyJsonActionListener() {
+    }
+
+    public MinifyJsonActionListener(EditorTextField editorTextField) {
         this.editorTextField = editorTextField;
     }
 
@@ -24,11 +28,12 @@ public class FormatJsonAction implements ActionListener {
         if (StringUtils.isBlank(text)) {
             return;
         }
+
         try {
-            String formattedJson = JsonUtils.formatJson(text);
-            editorTextField.setText(formattedJson);
+            String minifiedJson = JsonUtils.minifyJson(text);
+            editorTextField.setText(minifiedJson);
         } catch (Exception ex) {
-            ToolkitNotifier.error("Json format fail, please check the data.");
+            ToolkitNotifier.error("Json minify fail, please check data.");
         }
     }
 }

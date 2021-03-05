@@ -1,4 +1,4 @@
-package cn.silently9527.actions;
+package cn.silently9527.listener.action;
 
 import cn.silently9527.notification.ToolkitNotifier;
 import cn.silently9527.utils.SystemUtils;
@@ -11,10 +11,10 @@ import java.awt.event.ActionListener;
 /**
  * CopyContentAction
  */
-public class CopyContentAction implements ActionListener {
+public class CopyContentActionListener implements ActionListener {
     private EditorTextField editorTextField;
 
-    public CopyContentAction(EditorTextField editorTextField) {
+    public CopyContentActionListener(EditorTextField editorTextField) {
         this.editorTextField = editorTextField;
     }
 
