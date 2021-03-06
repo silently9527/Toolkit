@@ -1,7 +1,7 @@
 package cn.silently9527.ui;
 
 import cn.silently9527.listener.action.CopyContentActionListener;
-import cn.silently9527.listener.document.UrlDecodeDocumentListener;
+import cn.silently9527.listener.document.Base64DecodeDocumentListener;
 import com.intellij.openapi.editor.EditorFactory;
 import com.intellij.openapi.editor.EditorSettings;
 import com.intellij.openapi.fileTypes.FileTypes;
@@ -12,19 +12,18 @@ import org.jetbrains.annotations.NotNull;
 
 import javax.swing.*;
 
-public class UrlDecodeUI {
+public class Base64DecodeUI {
     private JPanel panel;
-    private EditorTextField urlTextField;
+    private EditorTextField textField;
     private EditorTextField resultTextField;
     private JButton copy;
 
     private Project project;
 
-    public UrlDecodeUI(Project project) {
+    public Base64DecodeUI(Project project) {
         this.project = project;
         copy.addActionListener(new CopyContentActionListener(this.resultTextField));
     }
-
 
     public JPanel getPanel() {
         return panel;
@@ -32,13 +31,13 @@ public class UrlDecodeUI {
 
     private void createUIComponents() {
         // TODO: place custom component creation code here
-        this.urlTextField = new EditorTextField(EditorFactory.getInstance().createDocument(""), project, FileTypes.PLAIN_TEXT, false, false);
-        this.urlTextField.addSettingsProvider(getEditorSettingsProvider());
+        this.textField = new EditorTextField(EditorFactory.getInstance().createDocument(""), project, FileTypes.PLAIN_TEXT, false, false);
+        this.textField.addSettingsProvider(getEditorSettingsProvider());
 
         this.resultTextField = new EditorTextField(EditorFactory.getInstance().createDocument(""), project, FileTypes.PLAIN_TEXT, true, false);
         this.resultTextField.addSettingsProvider(getEditorSettingsProvider());
 
-        this.urlTextField.addDocumentListener(new UrlDecodeDocumentListener(urlTextField, resultTextField));
+        this.textField.addDocumentListener(new Base64DecodeDocumentListener(textField, resultTextField));
     }
 
     @NotNull
