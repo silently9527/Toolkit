@@ -31,6 +31,8 @@ public abstract class AbstractToolkitCommandExecutor implements ToolkitCommandEx
                 .setMovable(true)
                 .setMinSize(dimension)
                 .setCancelOnClickOutside(false)
+                .setCancelOnWindowDeactivation(false)
+                .setCancelOnOtherWindowOpen(false)
                 .setResizable(true)
                 .setRequestFocus(true)
                 .createPopup();
