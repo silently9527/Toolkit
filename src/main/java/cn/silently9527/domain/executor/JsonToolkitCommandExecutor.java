@@ -11,7 +11,6 @@ import com.intellij.util.ui.JBDimension;
 import javax.swing.*;
 
 public class JsonToolkitCommandExecutor extends AbstractToolkitCommandExecutor {
-    private static final String POPUP_TITLE = "Json Formatter";
 
     @Override
     public boolean support(ToolkitCommand command) {
@@ -24,7 +23,7 @@ public class JsonToolkitCommandExecutor extends AbstractToolkitCommandExecutor {
         JPanel panel = new JsonFormatterUI(project).getPanel();
 
         JBDimension dimension = new JBDimension(400, 600);
-        JBPopup popup = createPopup(POPUP_TITLE, dimension, AllIcons.FileTypes.Json, panel);
+        JBPopup popup = createPopup(command.getDescription(), dimension, AllIcons.FileTypes.Json, panel);
         popup.show(getRelativePoint(dataContext, dimension));
     }
 

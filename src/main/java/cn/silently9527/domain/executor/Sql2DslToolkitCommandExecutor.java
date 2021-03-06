@@ -11,7 +11,6 @@ import com.intellij.util.ui.JBDimension;
 import javax.swing.*;
 
 public class Sql2DslToolkitCommandExecutor extends AbstractToolkitCommandExecutor {
-    private static final String POPUP_TITLE = "Sql to elasticsearch query";
 
     @Override
     public boolean support(ToolkitCommand command) {
@@ -25,7 +24,7 @@ public class Sql2DslToolkitCommandExecutor extends AbstractToolkitCommandExecuto
         JPanel panel = new Sql2DslUI(project).getPanel();
 
         JBDimension dimension = new JBDimension(400, 700);
-        JBPopup popup = createPopup(POPUP_TITLE, dimension, AllIcons.Providers.Mysql, panel);
+        JBPopup popup = createPopup(command.getDescription(), dimension, AllIcons.Providers.Mysql, panel);
         popup.show(getRelativePoint(dataContext, dimension));
     }
 }

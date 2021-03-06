@@ -1,7 +1,7 @@
 package cn.silently9527.domain.executor;
 
 import cn.silently9527.domain.ToolkitCommand;
-import cn.silently9527.ui.Base64DecodeUI;
+import cn.silently9527.ui.DateTimestampUI;
 import com.intellij.icons.AllIcons;
 import com.intellij.openapi.actionSystem.DataContext;
 import com.intellij.openapi.project.Project;
@@ -10,22 +10,22 @@ import com.intellij.util.ui.JBDimension;
 
 import javax.swing.*;
 
-public class Base64DecodeToolkitCommandExecutor extends AbstractToolkitCommandExecutor {
-    private static final String POPUP_TITLE = "Base64 Decode";
+public class DateTimestampToolkitCommandExecutor extends AbstractToolkitCommandExecutor {
 
     @Override
     public boolean support(ToolkitCommand command) {
-        return ToolkitCommand.Base64Decode.equals(command);
+        return ToolkitCommand.Date.equals(command) || ToolkitCommand.Timestamp.equals(command);
     }
 
     @Override
     public void execute(ToolkitCommand command, DataContext dataContext) {
         Project project = getProject(dataContext);
 
-        JPanel panel = new Base64DecodeUI(project).getPanel();
+        JPanel panel = new DateTimestampUI(project, command).getPanel();
 
-        JBDimension dimension = new JBDimension(400, 300);
-        JBPopup popup = createPopup(POPUP_TITLE, dimension, AllIcons.Toolwindows.Documentation, panel);
+        JBDimension dimension = new JBDimension(550, 300);
+        JBPopup popup = createPopup(command.getDescription(), dimension, AllIcons.Toolwindows.Documentation, panel);
         popup.show(getRelativePoint(dataContext, dimension));
     }
+
 }

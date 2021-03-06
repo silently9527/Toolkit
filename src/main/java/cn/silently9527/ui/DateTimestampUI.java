@@ -1,9 +1,9 @@
 package cn.silently9527.ui;
 
 import cn.hutool.core.date.DateTime;
+import cn.silently9527.domain.ToolkitCommand;
 import cn.silently9527.listener.action.CopyContentActionListener;
-import cn.silently9527.listener.document.DateDocumentListener;
-import cn.silently9527.listener.document.TimestampDocumentListener;
+import cn.silently9527.listener.document.DateTimestampDocumentListener;
 import com.intellij.openapi.editor.EditorFactory;
 import com.intellij.openapi.editor.EditorSettings;
 import com.intellij.openapi.fileTypes.FileTypes;
@@ -16,13 +16,8 @@ import org.jetbrains.annotations.NotNull;
 
 import javax.swing.*;
 
-public class TimestampUI {
+public class DateTimestampUI {
     private JPanel panel;
-    private JButton localTimeCopy;
-    private JButton localDateCopy;
-    private JButton secondCopy;
-    private JButton millisCopy;
-    private JButton utcCopy;
     private EditorTextField textField;
     private EditorTextField localTimeTextField;
     private EditorTextField localDateTextField;
@@ -30,9 +25,15 @@ public class TimestampUI {
     private EditorTextField millisTextField;
     private EditorTextField utcTimeTextField;
 
+    private JButton localTimeCopy;
+    private JButton localDateCopy;
+    private JButton secondCopy;
+    private JButton millisCopy;
+    private JButton utcCopy;
+
     private Project project;
 
-    public TimestampUI(Project project) {
+    public DateTimestampUI(Project project, ToolkitCommand command) {
         this.project = project;
         this.localTimeCopy.addActionListener(new CopyContentActionListener(localTimeTextField));
         this.localDateCopy.addActionListener(new CopyContentActionListener(localDateTextField));
@@ -40,10 +41,20 @@ public class TimestampUI {
         this.millisCopy.addActionListener(new CopyContentActionListener(millisTextField));
         this.utcCopy.addActionListener(new CopyContentActionListener(utcTimeTextField));
 
-        this.textField.addDocumentListener(new TimestampDocumentListener(this.textField, this.localTimeTextField,
-                this.localDateTextField, this.secondTextField, this.millisTextField, this.utcTimeTextField));
+        this.textField.addDocumentListener(new DateTimestampDocumentListener(command,
+                this.textField, this.localTimeTextField,
+                this.localDateTextField, this.secondTextField,
+                this.millisTextField, this.utcTimeTextField));
 
-        this.textField.setText(String.valueOf(DateTime.now().getTime()));
+        initTextField(command);
+    }
+
+    private void initTextField(ToolkitCommand command) {
+        if (ToolkitCommand.Date.equals(command)) {
+            this.textField.setText(DateTime.now().toString("yyyy-MM-dd HH:mm:ss"));
+        } else if (ToolkitCommand.Timestamp.equals(command)) {
+            this.textField.setText(String.valueOf(DateTime.now().getTime()));
+        }
     }
 
     public JPanel getPanel() {
@@ -53,7 +64,7 @@ public class TimestampUI {
     private void createUIComponents() {
         // TODO: place custom component creation code here
         this.textField = new LanguageTextField(PlainTextLanguage.INSTANCE, project, "", true);
-        this.textField.setPlaceholder("input timestamp");
+        this.textField.setPlaceholder("yyyy-MM-dd HH:mm:ss");
         this.textField.addSettingsProvider(getEditorSettingsProvider());
 
         this.localTimeTextField = createPlainTextEditor();

@@ -1,7 +1,8 @@
 package cn.silently9527.ui;
 
+import cn.silently9527.domain.ToolkitCommand;
 import cn.silently9527.listener.action.CopyContentActionListener;
-import cn.silently9527.listener.document.Base64DecodeDocumentListener;
+import cn.silently9527.listener.document.UrlEncodeAndDecodeDocumentListener;
 import com.intellij.openapi.editor.EditorFactory;
 import com.intellij.openapi.editor.EditorSettings;
 import com.intellij.openapi.fileTypes.FileTypes;
@@ -12,32 +13,27 @@ import org.jetbrains.annotations.NotNull;
 
 import javax.swing.*;
 
-public class Base64DecodeUI {
+public class URLEncodeAndDecodeUI {
     private JPanel panel;
     private EditorTextField textField;
-    private EditorTextField resultTextField;
     private JButton copy;
+    private EditorTextField resultTextField;
 
     private Project project;
 
-    public Base64DecodeUI(Project project) {
+    public URLEncodeAndDecodeUI(Project project, ToolkitCommand command) {
         this.project = project;
         copy.addActionListener(new CopyContentActionListener(this.resultTextField));
-    }
 
-    public JPanel getPanel() {
-        return panel;
+        this.textField.addDocumentListener(new UrlEncodeAndDecodeDocumentListener(command, textField, resultTextField));
     }
 
     private void createUIComponents() {
-        // TODO: place custom component creation code here
         this.textField = new EditorTextField(EditorFactory.getInstance().createDocument(""), project, FileTypes.PLAIN_TEXT, false, false);
         this.textField.addSettingsProvider(getEditorSettingsProvider());
 
         this.resultTextField = new EditorTextField(EditorFactory.getInstance().createDocument(""), project, FileTypes.PLAIN_TEXT, true, false);
         this.resultTextField.addSettingsProvider(getEditorSettingsProvider());
-
-        this.textField.addDocumentListener(new Base64DecodeDocumentListener(textField, resultTextField));
     }
 
     @NotNull
@@ -47,5 +43,9 @@ public class Base64DecodeUI {
             settings.setUseSoftWraps(true);
             settings.setLineNumbersShown(true);
         };
+    }
+
+    public JPanel getPanel() {
+        return this.panel;
     }
 }

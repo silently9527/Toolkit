@@ -4,13 +4,14 @@ import cn.hutool.core.date.DateTime;
 import cn.hutool.core.date.DateUnit;
 import cn.hutool.core.date.DateUtil;
 import cn.hutool.core.util.URLUtil;
+import cn.silently9527.domain.ToolkitCommand;
 import com.intellij.openapi.editor.event.DocumentEvent;
 import com.intellij.openapi.editor.event.DocumentListener;
 import com.intellij.ui.EditorTextField;
 import org.apache.commons.lang3.StringUtils;
 import org.jetbrains.annotations.NotNull;
 
-public class DateDocumentListener implements DocumentListener {
+public class DateTimestampDocumentListener implements DocumentListener {
     private static final String DATE_TIME_FORMAT = "yyyy-MM-dd HH:mm:ss";
     private static final String DATE_FORMAT = "yyyy-MM-dd";
 
@@ -20,13 +21,15 @@ public class DateDocumentListener implements DocumentListener {
     private EditorTextField secondTextField;
     private EditorTextField millisTextField;
     private EditorTextField utcTimeTextField;
+    private ToolkitCommand command;
 
-    public DateDocumentListener(EditorTextField textField,
-                                EditorTextField localTimeTextField,
-                                EditorTextField localDateTextField,
-                                EditorTextField secondTextField,
-                                EditorTextField millisTextField,
-                                EditorTextField utcTimeTextField) {
+    public DateTimestampDocumentListener(ToolkitCommand command, EditorTextField textField,
+                                         EditorTextField localTimeTextField,
+                                         EditorTextField localDateTextField,
+                                         EditorTextField secondTextField,
+                                         EditorTextField millisTextField,
+                                         EditorTextField utcTimeTextField) {
+        this.command = command;
         this.textField = textField;
         this.localTimeTextField = localTimeTextField;
         this.localDateTextField = localDateTextField;
@@ -42,7 +45,7 @@ public class DateDocumentListener implements DocumentListener {
             return;
         }
         try {
-            DateTime dateTime = DateUtil.parse(text, DATE_TIME_FORMAT);
+            DateTime dateTime = buildDateTime(command, text);
 
             this.localTimeTextField.setText(dateTime.toString(DATE_TIME_FORMAT));
             this.localDateTextField.setText(dateTime.toString(DATE_FORMAT));
@@ -57,6 +60,15 @@ public class DateDocumentListener implements DocumentListener {
             this.utcTimeTextField.setText("");
         }
 
+    }
+
+    private DateTime buildDateTime(ToolkitCommand command, String text) {
+        if (ToolkitCommand.Timestamp.equals(command)) {
+            return new DateTime(Long.valueOf(text));
+        } else if (ToolkitCommand.Date.equals(command)) {
+            return DateUtil.parse(text, DATE_TIME_FORMAT);
+        }
+        throw new UnsupportedOperationException();
     }
 
 }
