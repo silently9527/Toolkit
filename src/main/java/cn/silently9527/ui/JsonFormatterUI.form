@@ -32,21 +32,21 @@
             <constraints/>
             <properties>
               <horizontalTextPosition value="0"/>
-              <text value="format"/>
+              <text value="Format"/>
             </properties>
           </component>
           <component id="137ab" class="javax.swing.JButton" binding="minify">
             <constraints/>
             <properties>
               <horizontalTextPosition value="0"/>
-              <text value="minify"/>
+              <text value="Minify"/>
             </properties>
           </component>
           <component id="38e7" class="javax.swing.JButton" binding="copy">
             <constraints/>
             <properties>
               <horizontalTextPosition value="0"/>
-              <text value="copy"/>
+              <text value="Copy"/>
             </properties>
           </component>
         </children>
