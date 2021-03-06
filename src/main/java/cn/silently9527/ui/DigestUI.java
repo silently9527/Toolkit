@@ -1,6 +1,5 @@
 package cn.silently9527.ui;
 
-import cn.silently9527.domain.ToolkitCommand;
 import cn.silently9527.listener.action.CopyContentActionListener;
 import cn.silently9527.listener.document.DigestDocumentListener;
 import com.intellij.openapi.editor.EditorFactory;
@@ -16,7 +15,6 @@ import org.jetbrains.annotations.NotNull;
 import javax.swing.*;
 
 public class DigestUI {
-    private ButtonGroup buttonGroup;
     private JRadioButton upperCase;
     private JRadioButton lowerCase;
     private JPanel panel;
@@ -43,20 +41,25 @@ public class DigestUI {
         this.copySha384.addActionListener(new CopyContentActionListener(sha384TextField));
         this.copySha512.addActionListener(new CopyContentActionListener(sha512TextField));
 
-        this.buttonGroup = new ButtonGroup();
-        this.buttonGroup.add(upperCase);
-        this.buttonGroup.add(lowerCase);
+        ButtonGroup buttonGroup = new ButtonGroup();
+        buttonGroup.add(upperCase);
+        buttonGroup.add(lowerCase);
 
         this.textField.addDocumentListener(new DigestDocumentListener(this.lowerCase,
                 this.textField, this.md5TextField,
                 this.sha1TextField, this.sha224TextField, this.sha384TextField, this.sha512TextField));
     }
 
-
     private void createUIComponents() {
         // TODO: place custom component creation code here
-        this.textField = new LanguageTextField(PlainTextLanguage.INSTANCE, project, "", true);
+        this.textField = new LanguageTextField(PlainTextLanguage.INSTANCE, project, "", false);
         this.textField.setPlaceholder("输入字符串");
+        this.textField.addSettingsProvider(editor -> {
+            EditorSettings settings = editor.getSettings();
+            settings.setIndentGuidesShown(true);
+            settings.setLineNumbersShown(true);
+            settings.setWheelFontChangeEnabled(true);
+        });
 
         this.md5TextField = createPlainTextEditor();
         this.md5TextField.addSettingsProvider(getEditorSettingsProvider());

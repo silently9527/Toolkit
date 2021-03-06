@@ -3,10 +3,10 @@ package cn.silently9527.domain.executor;
 import cn.silently9527.domain.ToolkitCommand;
 import com.intellij.openapi.actionSystem.DataContext;
 
-public class UuidToolkitCommandExecutor implements ToolkitCommandExecutor {
+public class UuidToolkitCommandExecutor extends AbstractToolkitCommandExecutor {
     @Override
     public boolean support(ToolkitCommand command) {
-        return false;
+        return ToolkitCommand.UUID.equals(command);
     }
 
     @Override

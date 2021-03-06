@@ -1,16 +1,31 @@
 package cn.silently9527.domain.executor;
 
 import cn.silently9527.domain.ToolkitCommand;
+import cn.silently9527.ui.RegularExpressionUI;
+import cn.silently9527.ui.URLEncodeAndDecodeUI;
+import com.intellij.icons.AllIcons;
 import com.intellij.openapi.actionSystem.DataContext;
+import com.intellij.openapi.project.Project;
+import com.intellij.openapi.ui.popup.JBPopup;
+import com.intellij.util.ui.JBDimension;
 
-public class RegularToolkitCommandExecutor implements ToolkitCommandExecutor {
+import javax.swing.*;
+
+public class RegularToolkitCommandExecutor extends AbstractToolkitCommandExecutor {
+
     @Override
     public boolean support(ToolkitCommand command) {
-        return false;
+        return ToolkitCommand.Regular.equals(command);
     }
 
     @Override
     public void execute(ToolkitCommand command, DataContext dataContext) {
+        Project project = getProject(dataContext);
 
+        JPanel panel = new RegularExpressionUI(project).getPanel();
+
+        JBDimension dimension = new JBDimension(650, 620);
+        JBPopup popup = createPopup(command.getDescription(), dimension, AllIcons.FileTypes.Regexp, panel);
+        popup.show(getRelativePoint(dataContext, dimension));
     }
 }
