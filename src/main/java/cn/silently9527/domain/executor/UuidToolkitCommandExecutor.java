@@ -1,7 +1,14 @@
 package cn.silently9527.domain.executor;
 
 import cn.silently9527.domain.ToolkitCommand;
+import cn.silently9527.ui.UuidUI;
+import com.intellij.icons.AllIcons;
 import com.intellij.openapi.actionSystem.DataContext;
+import com.intellij.openapi.project.Project;
+import com.intellij.openapi.ui.popup.JBPopup;
+import com.intellij.util.ui.JBDimension;
+
+import javax.swing.*;
 
 public class UuidToolkitCommandExecutor extends AbstractToolkitCommandExecutor {
     @Override
@@ -11,6 +18,12 @@ public class UuidToolkitCommandExecutor extends AbstractToolkitCommandExecutor {
 
     @Override
     public void execute(ToolkitCommand command, DataContext dataContext) {
+        Project project = getProject(dataContext);
 
+        JPanel panel = new UuidUI(project).getPanel();
+
+        JBDimension dimension = new JBDimension(550, 250);
+        JBPopup popup = createPopup(command.getDescription(), dimension, AllIcons.FileTypes.Config, panel);
+        popup.show(getRelativePoint(dataContext, dimension));
     }
 }

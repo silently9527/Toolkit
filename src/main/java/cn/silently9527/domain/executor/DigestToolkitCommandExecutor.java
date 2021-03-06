@@ -1,7 +1,6 @@
 package cn.silently9527.domain.executor;
 
 import cn.silently9527.domain.ToolkitCommand;
-import cn.silently9527.ui.DateTimestampUI;
 import cn.silently9527.ui.DigestUI;
 import com.intellij.icons.AllIcons;
 import com.intellij.openapi.actionSystem.DataContext;

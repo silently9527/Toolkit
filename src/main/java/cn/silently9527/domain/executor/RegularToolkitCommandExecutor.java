@@ -2,7 +2,6 @@ package cn.silently9527.domain.executor;
 
 import cn.silently9527.domain.ToolkitCommand;
 import cn.silently9527.ui.RegularExpressionUI;
-import cn.silently9527.ui.URLEncodeAndDecodeUI;
 import com.intellij.icons.AllIcons;
 import com.intellij.openapi.actionSystem.DataContext;
 import com.intellij.openapi.project.Project;

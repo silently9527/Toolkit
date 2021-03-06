@@ -3,7 +3,6 @@ package cn.silently9527.listener.action;
 import cn.hutool.http.HttpUtil;
 import cn.silently9527.notification.ToolkitNotifier;
 import cn.silently9527.utils.JsonFormatter;
-import cn.silently9527.utils.JsonUtils;
 import com.intellij.ui.EditorTextField;
 import org.apache.commons.lang3.StringEscapeUtils;
 import org.apache.commons.lang3.StringUtils;

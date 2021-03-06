@@ -80,7 +80,7 @@
           <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="4" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
-          <text value="UTC+8 中国标准时间（本地时间）："/>
+          <text value=" UTC+8 中国标准时间（本地时间）："/>
         </properties>
       </component>
       <component id="87710" class="javax.swing.JLabel">
@@ -88,7 +88,7 @@
           <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="4" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
-          <text value="UTC+8 中国标准时间（本地日期）："/>
+          <text value=" UTC+8 中国标准时间（本地日期）："/>
         </properties>
       </component>
       <component id="f5346" class="javax.swing.JLabel">

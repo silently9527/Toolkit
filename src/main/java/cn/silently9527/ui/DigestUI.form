@@ -72,7 +72,7 @@
           <grid row="4" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="4" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
-          <text value="SHA224："/>
+          <text value=" SHA224："/>
         </properties>
       </component>
       <component id="5598f" class="javax.swing.JLabel">
@@ -80,7 +80,7 @@
           <grid row="5" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="4" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
-          <text value="SHA384："/>
+          <text value=" SHA384："/>
         </properties>
       </component>
       <component id="4b793" class="javax.swing.JLabel">
@@ -88,7 +88,7 @@
           <grid row="6" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="4" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
-          <text value="SHA512："/>
+          <text value=" SHA512："/>
         </properties>
       </component>
       <component id="69a78" class="javax.swing.JRadioButton" binding="upperCase">
