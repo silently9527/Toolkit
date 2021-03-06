@@ -3,7 +3,7 @@ package cn.silently9527.domain;
 import cn.silently9527.domain.executor.Base64EncodeAndDecodeToolkitCommandExecutor;
 import cn.silently9527.domain.executor.DateTimestampToolkitCommandExecutor;
 import cn.silently9527.domain.executor.JsonToolkitCommandExecutor;
-import cn.silently9527.domain.executor.Md5ToolkitCommandExecutor;
+import cn.silently9527.domain.executor.DigestToolkitCommandExecutor;
 import cn.silently9527.domain.executor.IPAndPhoneToolkitCommandExecutor;
 import cn.silently9527.domain.executor.QrcodeEncodeToolkitCommandExecutor;
 import cn.silently9527.domain.executor.RegularToolkitCommandExecutor;
@@ -23,8 +23,13 @@ public enum ToolkitCommand {
     Base64Decode("base64 decode", "base64解码", Base64EncodeAndDecodeToolkitCommandExecutor.class),
     Phone("phone", "手机号归属地", IPAndPhoneToolkitCommandExecutor.class),
     IP("ip", "IP归属地", IPAndPhoneToolkitCommandExecutor.class),
-    MD5("md5", "md5加密", Md5ToolkitCommandExecutor.class),
-    UUID("uuid", "UUID随机唯一值", UuidToolkitCommandExecutor.class),
+    MD5("md5", "MD5加密", DigestToolkitCommandExecutor.class),
+    SHA1("sha1", "SHA1加密", DigestToolkitCommandExecutor.class),
+    SHA224("sha224", "SHA224加密", DigestToolkitCommandExecutor.class),
+    SHA256("sha256", "SHA256加密", DigestToolkitCommandExecutor.class),
+    SHA384("sha384", "SHA384加密", DigestToolkitCommandExecutor.class),
+    SHA512("sha512", "SHA512加密", DigestToolkitCommandExecutor.class),
+    UUID("uuid", "UUID随机值", UuidToolkitCommandExecutor.class),
     Regular("regular", "正则表达式", RegularToolkitCommandExecutor.class),
     QRCodeEncode("qrcode encode", "生成二维码", QrcodeEncodeToolkitCommandExecutor.class);
 

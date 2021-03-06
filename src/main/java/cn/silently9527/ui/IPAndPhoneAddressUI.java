@@ -48,7 +48,6 @@ public class IPAndPhoneAddressUI {
             EditorSettings settings = editor.getSettings();
             settings.setIndentGuidesShown(true);
             settings.setWheelFontChangeEnabled(true);
-            editor.setHorizontalScrollbarVisible(true);
         };
     }
 

@@ -26,12 +26,9 @@ public class UrlEncodeAndDecodeDocumentListener implements DocumentListener {
             return;
         }
         String result;
-        System.out.println(this.command);
         if (ToolkitCommand.URLEncode.equals(command)) {
-            System.out.println("1");
             result = URLUtil.encode(text);
         } else {
-            System.out.println("2");
             result = URLUtil.decode(text);
         }
         this.resultTextField.setText(result);

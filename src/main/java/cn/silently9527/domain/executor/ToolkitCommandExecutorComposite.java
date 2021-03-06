@@ -31,6 +31,7 @@ public class ToolkitCommandExecutorComposite implements ToolkitCommandExecutor {
         for (ToolkitCommandExecutor executor : this.toolkitCommandExecutors) {
             if (executor.support(command)) {
                 executor.execute(command, dataContext);
+                return;
             }
         }
     }
