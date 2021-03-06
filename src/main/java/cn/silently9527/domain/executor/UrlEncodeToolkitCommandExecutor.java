@@ -11,7 +11,7 @@ import com.intellij.util.ui.JBDimension;
 import javax.swing.*;
 
 public class UrlEncodeToolkitCommandExecutor extends AbstractToolkitCommandExecutor {
-    private static final String POPUP_TITLE = "Url Encode";
+    private static final String POPUP_TITLE = "URL Encode";
 
     @Override
     public boolean support(ToolkitCommand command) {

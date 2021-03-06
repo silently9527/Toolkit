@@ -29,6 +29,7 @@
 
         <runAnything.executionProvider id="runAnythingExecutionProvider"
                                        implementation="cn.silently9527.extensions.runanything.RunAnythingToolkitProvider"/>
+
     </extensions>
 
     <actions>

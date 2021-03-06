@@ -3,6 +3,7 @@ package cn.silently9527.utils;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.core.util.DefaultIndenter;
 import com.fasterxml.jackson.core.util.DefaultPrettyPrinter;
+import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 /**
@@ -12,7 +13,8 @@ import com.fasterxml.jackson.databind.ObjectMapper;
  */
 public class JsonUtils {
 
-    private JsonUtils() {}
+    private JsonUtils() {
+    }
 
     public static String formatJson(String jsonStr) throws JsonProcessingException {
         Object jsonObject = Holder.MAPPER.readValue(jsonStr, Object.class);
@@ -26,6 +28,10 @@ public class JsonUtils {
 
     public static void verifyJson(String jsonStr) throws JsonProcessingException {
         Holder.MAPPER.readValue(jsonStr, Object.class);
+    }
+
+    public static JsonNode read(String jsonStr) throws JsonProcessingException {
+        return Holder.MAPPER.readTree(jsonStr);
     }
 
     private static final class Holder {

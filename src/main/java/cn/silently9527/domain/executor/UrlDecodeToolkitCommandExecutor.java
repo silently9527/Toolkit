@@ -11,7 +11,7 @@ import com.intellij.util.ui.JBDimension;
 import javax.swing.*;
 
 public class UrlDecodeToolkitCommandExecutor extends AbstractToolkitCommandExecutor {
-    private static final String POPUP_TITLE = "Url Decode";
+    private static final String POPUP_TITLE = "URL Decode";
 
     @Override
     public boolean support(ToolkitCommand command) {
