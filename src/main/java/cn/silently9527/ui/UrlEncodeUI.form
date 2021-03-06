@@ -14,7 +14,7 @@
         </constraints>
         <properties>
           <horizontalTextPosition value="0"/>
-          <text value="Copy"/>
+          <text value="复制"/>
         </properties>
       </component>
       <splitpane id="fc4dd">
