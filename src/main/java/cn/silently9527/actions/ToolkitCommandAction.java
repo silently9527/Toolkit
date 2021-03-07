@@ -20,7 +20,7 @@ public class ToolkitCommandAction extends AnAction {
 
         Presentation presentation = getTemplatePresentation();
         presentation.setText(command.getCommand(), false);
-        presentation.setIcon(AllIcons.Nodes.Toolbox);
+        presentation.setIcon(AllIcons.General.ExternalTools);
         presentation.setDescription(command.getDescription());
     }
 
