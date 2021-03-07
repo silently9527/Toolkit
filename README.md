@@ -10,15 +10,19 @@
 
 ## How to use
 1. 双击control或者点工具类图标即可弹出RunAnything窗口
+
 ![](https://tva1.sinaimg.cn/large/008eGmZEgy1gobp4rklznj30h001c0sj.jpg)
 
 2. 在RunAnything中输入`?`查看 `toolkit` 命令
+
 ![](https://tva1.sinaimg.cn/large/008eGmZEgy1gobp6dvicqj30im0edglm.jpg)
 
 3. 输入`toolkit`即可看到所有支持的命令
+
 ![](https://tva1.sinaimg.cn/large/008eGmZEgy1gobp7jev4lj30im0g0mxc.jpg)
 
 4. 选择需要使用的命令，例如：SQL转elasticSearch语句、二维码生成
+
 ![](https://tva1.sinaimg.cn/large/008eGmZEgy1gobpa7j02kj30e10jgwel.jpg)
 ![](https://tva1.sinaimg.cn/large/008eGmZEgy1gobpcoswyyj30ti0rm3yv.jpg)
 
@@ -28,6 +32,7 @@
 第二种方式：
 1. 关注微信公众号：贝塔学java，回复：`toolkit` 即可获取已打包的插件，最新插件版本`1.0.3`
 2. 打包idea的插件安装界面 -> `install plugin from disk` ,选择下载的最新插件包，重启idea接口生效
+
 ![](https://tva1.sinaimg.cn/large/008eGmZEgy1gobq5a9ajzj31de0u0dij.jpg)
 
 ## 支持的命令
