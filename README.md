@@ -22,6 +22,14 @@
 ![](https://tva1.sinaimg.cn/large/008eGmZEgy1gobpa7j02kj30e10jgwel.jpg)
 ![](https://tva1.sinaimg.cn/large/008eGmZEgy1gobpcoswyyj30ti0rm3yv.jpg)
 
+## How to install
+第一种方式：下载源码自己打包安装
+
+第二种方式：
+1. 关注微信公众号：贝塔学java，回复：`toolkit` 即可获取已打包的插件，最新插件版本`1.0.3`
+2. 打包idea的插件安装界面 -> `install plugin from disk` ,选择下载的最新插件包，重启idea接口生效
+![](https://tva1.sinaimg.cn/large/008eGmZEgy1gobq5a9ajzj31de0u0dij.jpg)
+
 ## 支持的命令
 
 | 命令 | 说明 |
