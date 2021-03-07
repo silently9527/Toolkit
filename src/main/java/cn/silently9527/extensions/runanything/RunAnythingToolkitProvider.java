@@ -72,7 +72,7 @@ public class RunAnythingToolkitProvider extends RunAnythingAnActionProvider<AnAc
     @Override
     @Nullable
     public Icon getHelpIcon() {
-        return AllIcons.Nodes.Toolbox;
+        return AllIcons.General.ExternalTools;
     }
 
     @NotNull
