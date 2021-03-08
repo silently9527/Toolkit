@@ -1,4 +1,9 @@
 # Programmer toolkit
+
+<a href="https://activity.huaweicloud.com/newyear_promotion/index.html?bpName=08a3013a6b80106f0f4ec018ce22bf60&bindType=1&salesID=hw-wtq01">
+    <img src="https://tva1.sinaimg.cn/large/008eGmZEgy1goctduoafqj31hw03c0t5.jpg"/>
+</a>
+
 > Github地址: https://github.com/silently9527/ToolsetIdeaPlugin
 >
 > Gitee地址: https://gitee.com/silently9527/ToolsetIdeaPlugin
