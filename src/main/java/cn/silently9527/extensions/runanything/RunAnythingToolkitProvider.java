@@ -1,5 +1,6 @@
 package cn.silently9527.extensions.runanything;
 
+import cn.silently9527.Constants;
 import cn.silently9527.actions.ToolkitCommandAction;
 import cn.silently9527.domain.ToolkitCommand;
 import cn.silently9527.service.CacheService;
@@ -72,13 +73,13 @@ public class RunAnythingToolkitProvider extends RunAnythingAnActionProvider<AnAc
     @Override
     @Nullable
     public Icon getHelpIcon() {
-        return AllIcons.General.ExternalTools;
+        return Constants.Icons.Toolbox;
     }
 
     @NotNull
     @Override
     public String getCompletionGroupTitle() {
-        return "toolkit"; //过滤界面中的名称
+        return "Toolkit"; //过滤界面中的名称
     }
 
 //    @Override

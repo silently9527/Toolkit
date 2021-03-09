@@ -1,8 +1,8 @@
 package cn.silently9527.actions;
 
+import cn.silently9527.Constants;
 import cn.silently9527.domain.ToolkitCommand;
 import cn.silently9527.service.ToolkitCommandService;
-import com.intellij.icons.AllIcons;
 import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.actionSystem.Presentation;
@@ -20,7 +20,7 @@ public class ToolkitCommandAction extends AnAction {
 
         Presentation presentation = getTemplatePresentation();
         presentation.setText(command.getCommand(), false);
-        presentation.setIcon(AllIcons.General.ExternalTools);
+        presentation.setIcon(Constants.Icons.Toolbox);
         presentation.setDescription(command.getDescription());
     }
 
