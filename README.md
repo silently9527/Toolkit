@@ -30,6 +30,9 @@
 
 ![](https://tva1.sinaimg.cn/large/008eGmZEgy1gobpa7j02kj30e10jgwel.jpg)
 ![](https://tva1.sinaimg.cn/large/008eGmZEgy1gobpcoswyyj30ti0rm3yv.jpg)
+![](https://tva1.sinaimg.cn/large/008eGmZEgy1godq400p1hj30um0jgglq.jpg)
+![](https://tva1.sinaimg.cn/large/008eGmZEgy1godq4i5hpij30um0gm74p.jpg)
+![](https://tva1.sinaimg.cn/large/008eGmZEgy1godq5n7pyoj30m60dyt8r.jpg)
 
 ## How to install
 第一种方式：下载源码自己打包安装
