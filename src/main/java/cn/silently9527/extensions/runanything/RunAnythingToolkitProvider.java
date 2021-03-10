@@ -53,8 +53,14 @@ public class RunAnythingToolkitProvider extends RunAnythingAnActionProvider<AnAc
                 IdeBundle.message("run.anything.actions.undefined"));
     }
 
-    @Override
+//    @Override
     public @Nullable String getHelpGroupTitle() {
+        return "Toolkit";
+    }
+
+    @Override
+    @Nullable
+    public String getHelpDescription() {
         return "Toolkit";
     }
 

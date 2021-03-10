@@ -44,6 +44,7 @@
         <runAnything.executionProvider id="runAnythingExecutionProvider"
                                        implementation="cn.silently9527.extensions.runanything.RunAnythingToolkitProvider"/>
 
+        <runAnything.helpGroup implementation="cn.silently9527.extensions.runanything.RunAnythingToolkitHelpGroup"/>
     </extensions>
 
     <actions>

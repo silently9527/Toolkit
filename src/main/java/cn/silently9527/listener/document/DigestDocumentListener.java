@@ -3,11 +3,13 @@ package cn.silently9527.listener.document;
 import com.intellij.openapi.editor.event.DocumentEvent;
 import com.intellij.openapi.editor.event.DocumentListener;
 import com.intellij.ui.EditorTextField;
+import org.apache.commons.codec.binary.Hex;
 import org.apache.commons.codec.digest.DigestUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.jetbrains.annotations.NotNull;
 
 import javax.swing.*;
+import java.security.MessageDigest;
 
 public class DigestDocumentListener implements DocumentListener {
     private EditorTextField textField;
@@ -43,9 +45,11 @@ public class DigestDocumentListener implements DocumentListener {
                 upperCaseB = false;
             }
 
+            MessageDigest sha224 = DigestUtils.getDigest("SHA-224");
+            String sha224Result = Hex.encodeHexString(sha224.digest(org.apache.commons.codec.binary.StringUtils.getBytesUtf8(text)));
             this.md5TextField.setText(upperCaseB ? DigestUtils.md5Hex(text).toUpperCase() : DigestUtils.md5Hex(text).toLowerCase());
             this.sha1TextField.setText(upperCaseB ? DigestUtils.sha1Hex(text).toUpperCase() : DigestUtils.sha1Hex(text).toLowerCase());
-            this.sha224TextField.setText(upperCaseB ? DigestUtils.sha3_224Hex(text).toUpperCase() : DigestUtils.sha3_224Hex(text).toLowerCase());
+            this.sha224TextField.setText(upperCaseB ? sha224Result.toUpperCase() : sha224Result.toLowerCase());
             this.sha384TextField.setText(upperCaseB ? DigestUtils.sha384Hex(text).toUpperCase() : DigestUtils.sha384Hex(text).toLowerCase());
             this.sha512TextField.setText(upperCaseB ? DigestUtils.sha512Hex(text).toUpperCase() : DigestUtils.sha512Hex(text).toLowerCase());
         } catch (Exception ignored) {

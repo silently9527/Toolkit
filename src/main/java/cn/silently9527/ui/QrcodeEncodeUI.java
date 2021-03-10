@@ -15,7 +15,7 @@ import javax.swing.*;
 
 public class QrcodeEncodeUI {
     private JPanel panel;
-    private JButton brower;
+    private JButton browse;
     private JButton generate;
     private JButton download;
     private JLabel imageLabel;
@@ -26,7 +26,7 @@ public class QrcodeEncodeUI {
 
     public QrcodeEncodeUI(Project project) {
         this.project = project;
-        this.brower.addActionListener(new OpenFileActionListener(project, logoTextField));
+        this.browse.addActionListener(new OpenFileActionListener(project, logoTextField));
         this.generate.addActionListener(new GenerateQrcodeActionListener(contentTextField, logoTextField, imageLabel));
         this.download.addActionListener(new DownloadQrcodeActionListener(project, imageLabel));
 

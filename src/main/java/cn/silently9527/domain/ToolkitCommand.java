@@ -5,6 +5,7 @@ import cn.silently9527.domain.executor.DateTimestampToolkitCommandExecutor;
 import cn.silently9527.domain.executor.DigestToolkitCommandExecutor;
 import cn.silently9527.domain.executor.IPAndPhoneToolkitCommandExecutor;
 import cn.silently9527.domain.executor.JsonToolkitCommandExecutor;
+import cn.silently9527.domain.executor.QrcodeDecodeToolkitCommandExecutor;
 import cn.silently9527.domain.executor.QrcodeEncodeToolkitCommandExecutor;
 import cn.silently9527.domain.executor.RegularToolkitCommandExecutor;
 import cn.silently9527.domain.executor.Sql2DslToolkitCommandExecutor;
@@ -31,7 +32,8 @@ public enum ToolkitCommand {
     SHA512("sha512", "SHA512加密", DigestToolkitCommandExecutor.class),
     UUID("uuid", "UUID随机值", UuidToolkitCommandExecutor.class),
     Regular("regular", "正则表达式", RegularToolkitCommandExecutor.class),
-    QRCodeEncode("qrcode encode", "生成二维码", QrcodeEncodeToolkitCommandExecutor.class);
+    QRCodeEncode("qrcode encode", "生成二维码", QrcodeEncodeToolkitCommandExecutor.class),
+    QRCodeDecode("qrcode decode", "解析二维码", QrcodeDecodeToolkitCommandExecutor.class);
 
     private String command;
     private String description;

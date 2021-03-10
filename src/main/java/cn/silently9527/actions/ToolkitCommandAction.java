@@ -30,7 +30,7 @@ public class ToolkitCommandAction extends AnAction {
     }
 
     @Nullable
-    @Override
+//    @Override
     public String getTemplateText() {
         return this.command.getCommand();
     }

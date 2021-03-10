@@ -1,10 +1,11 @@
 package cn.silently9527.utils;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.core.util.DefaultIndenter;
 import com.fasterxml.jackson.core.util.DefaultPrettyPrinter;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
+
+import java.io.IOException;
 
 /**
  * JsonUtil
@@ -16,21 +17,21 @@ public class JsonUtils {
     private JsonUtils() {
     }
 
-    public static String formatJson(String jsonStr) throws JsonProcessingException {
+    public static String formatJson(String jsonStr) throws IOException {
         Object jsonObject = Holder.MAPPER.readValue(jsonStr, Object.class);
         return Holder.MAPPER.writer(Holder.DEFAULT_PRETTY_PRINTER).writeValueAsString(jsonObject);
     }
 
-    public static String minifyJson(String jsonStr) throws JsonProcessingException {
+    public static String minifyJson(String jsonStr) throws IOException {
         Object jsonObject = Holder.MAPPER.readValue(jsonStr, Object.class);
         return Holder.MAPPER.writeValueAsString(jsonObject);
     }
 
-    public static void verifyJson(String jsonStr) throws JsonProcessingException {
+    public static void verifyJson(String jsonStr) throws IOException {
         Holder.MAPPER.readValue(jsonStr, Object.class);
     }
 
-    public static JsonNode read(String jsonStr) throws JsonProcessingException {
+    public static JsonNode read(String jsonStr) throws IOException {
         return Holder.MAPPER.readTree(jsonStr);
     }
 

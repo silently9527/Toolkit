@@ -38,7 +38,7 @@
           <text value=" Logo图片："/>
         </properties>
       </component>
-      <component id="311fd" class="javax.swing.JButton" binding="brower">
+      <component id="311fd" class="javax.swing.JButton" binding="browse">
         <constraints>
           <grid row="1" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>

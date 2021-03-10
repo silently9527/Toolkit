@@ -75,6 +75,8 @@
 | toolkit file minify | js/css混淆压缩 |
 | toolkit file download | 文件下载 |
 | toolkit qrcode decode | 二维码解析 |
+| toolkit repeat | 去重，查重 |
+
 
 > 欢迎小伙伴留言希望支持的命令
 
