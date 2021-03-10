@@ -66,6 +66,7 @@
 | toolkit uuid | UUID随机值 |
 | toolkit regular | 正则表达式 |
 | toolkit qrcode encode | 生成二维码（支持插入Logo） |
+| toolkit qrcode decode | 二维码解析 |
 
 ## 计划中的命令
 | 命令 | 说明 |
@@ -74,7 +75,7 @@
 | toolkit cron | Cron表达式 |
 | toolkit file minify | js/css混淆压缩 |
 | toolkit file download | 文件下载 |
-| toolkit qrcode decode | 二维码解析 |
+
 | toolkit repeat | 去重，查重 |
 
 
