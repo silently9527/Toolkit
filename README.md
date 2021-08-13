@@ -1,10 +1,10 @@
-# Programmer toolkit
+# Programmer Toolkit
 
 <a href="https://activity.huaweicloud.com/newyear_promotion/index.html?bpName=08a3013a6b80106f0f4ec018ce22bf60&bindType=1&salesID=hw-wtq01" target="_blank">
     <img src="https://tva1.sinaimg.cn/large/008eGmZEgy1goctduoafqj31hw03c0t5.jpg"/>
 </a>
 
-> Github地址: https://github.com/silently9527/ToolsetIdeaPlugin
+> Github地址: https://github.com/silently9527/Toolkit
 >
 > Gitee地址: https://gitee.com/silently9527/ToolsetIdeaPlugin
 >
@@ -86,8 +86,14 @@
 | --- | --- | 
 | Intellij IDEA | 2019、2020 |
 
-## 微信公众号
-<img width="200" src="https://raw.githubusercontent.com/silently9527/JavaCore/master/imgs/gonzhonghao.png" alt="公众号">
+
+#### 微信公众号
+
+<img width="200" src="https://tva1.sinaimg.cn/large/008i3skNgy1gtezj6orcdj60gu0gswfr02.jpg" alt="公众号">
+
+#### 需要进入技术交流群的同学，添加我的个人微信号：silently9527
+
+<img width="200" src="https://tva1.sinaimg.cn/large/008i3skNgy1gteyh15a44j60h40g03zo02.jpg" alt="silently9527">
 
 ## 我的技术博客
 [https://silently9527.cn/](https://silently9527.cn/)
