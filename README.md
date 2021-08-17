@@ -1,8 +1,13 @@
 # Programmer Toolkit
 
-<a href="https://activity.huaweicloud.com/newyear_promotion/index.html?bpName=08a3013a6b80106f0f4ec018ce22bf60&bindType=1&salesID=hw-wtq01" target="_blank">
-    <img src="https://tva1.sinaimg.cn/large/008eGmZEgy1goctduoafqj31hw03c0t5.jpg"/>
-</a>
+<p align="center">
+  <a href="#微信公众号"><img src="https://img.shields.io/badge/公众号-贝塔学JAVA-blue.svg" alt="公众号"></a>
+  <a href="https://juejin.cn/user/2779199782521693"><img src="https://img.shields.io/badge/juejin-掘金-yellow.svg" alt="掘金"></a>
+  <a href="https://blog.csdn.net/asdewq380303318"><img src="https://img.shields.io/badge/csdn-CSDN-red.svg" alt="CSDN"></a>
+  <a href="https://my.oschina.net/u/3230120"><img src="https://img.shields.io/badge/oschina-开源中国-green" alt="开源中国"></a>
+  <a href="https://www.zhihu.com/people/huaan9527-57/posts"><img src="https://img.shields.io/badge/zhihu-知乎-purple" alt="知乎"></a>
+</p>
+
 
 > Github地址: https://github.com/silently9527/Toolkit
 >
@@ -87,13 +92,10 @@
 | Intellij IDEA | 2019、2020 |
 
 
-#### 微信公众号
+#### 期待你的加入，公众号：`贝塔学Java`，个人微信号：silently9527
 
-<img width="200" src="https://tva1.sinaimg.cn/large/008i3skNgy1gtezj6orcdj60gu0gswfr02.jpg" alt="公众号">
+<img src="https://cdn.silently9527.cn/weixhao_gongzonghao_1629032267170.jpg?imageView2/1/w/600/h/350" alt="公众号">
 
-#### 需要进入技术交流群的同学，添加我的个人微信号：silently9527
-
-<img width="200" src="https://tva1.sinaimg.cn/large/008i3skNgy1gteyh15a44j60h40g03zo02.jpg" alt="silently9527">
 
 ## 我的技术博客
 [https://silently9527.cn/](https://silently9527.cn/)
