@@ -98,6 +98,13 @@
 ## 我的技术博客
 [https://silently9527.cn/](https://silently9527.cn/)
 
+## 其他项目推荐
+* [前后端完全开源高颜值淘客APP](https://github.com/silently9527/coupons)
+* [深入解析SpringMVC核心原理：从手写简易版MVC框架开始(SmartMvc)](https://github.com/silently9527/SmartMvc)
+* [Java程序员自我学习的书单](https://github.com/silently9527/ProgrammerBooks)
+* [技术文章以及代码收录仓库](https://github.com/silently9527/ProgrammerNotes)
+* [高颜值可定制化的简介导航网站](http://nav.silently9527.cn/)
+
 ## 捐赠研发
 如果您认为此项目帮到了您的开发工作,您可以捐赠我一杯可乐(相信这比打赏主播更有意义)。
 
