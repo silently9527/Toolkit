@@ -11,7 +11,7 @@
 
 > Github地址: https://github.com/silently9527/Toolkit
 >
-> Gitee地址: https://gitee.com/silently9527/ToolsetIdeaPlugin
+> Gitee地址: https://gitee.com/silently9527/Toolkit
 >
 > 觉得好用的小伙伴记得小手一抖 star 哟
 
