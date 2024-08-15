@@ -92,14 +92,6 @@
 | Intellij IDEA | 2019、2020 |
 
 
-#### 期待你的加入，公众号：`贝塔学Java`，个人微信号：silently9527
-
-<img src="https://cdn.silently9527.cn/weixhao_gongzonghao_1629032267170.jpg?imageView2/1/w/600/h/350" alt="公众号">
-
-
-## 我的技术博客
-[https://silently9527.cn/](https://silently9527.cn/)
-
 ## 其他项目推荐
 * [前后端完全开源高颜值淘客APP](https://github.com/silently9527/coupons)
 * [深入解析SpringMVC核心原理：从手写简易版MVC框架开始(SmartMvc)](https://github.com/silently9527/SmartMvc)
